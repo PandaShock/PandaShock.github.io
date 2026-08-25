@@ -348,6 +348,35 @@ a:hover {
     font-weight: 500;
 }
 
+/* ====== Language Switch ====== */
+.lang-switch {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.lang-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
 /* ====== Download Section ====== */
 .download-box {
     display: flex;

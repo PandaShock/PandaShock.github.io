@@ -5,14 +5,15 @@
 ### 1. 修改内容
 
 - **首页** `index.html`：修改头像（替换 `assets/img/avatar.jpg`）、姓名、简介、链接
-- **简历** `resume.html`：修改工作经历、教育背景、技能标签
+- **简历** `resume.html`：简历页支持**中/英**切换（顶部「中文 / English」按钮），中文与英文内容分别在页面内切换
 - **作品集** `portfolio.html`：修改项目卡片、截图（放到 `assets/img/`）、链接
 
 ### 2. 替换资源
 
 - 替换 `assets/img/avatar.jpg` 为你的头像
 - 替换 `assets/img/project1.jpg` ~ `project4.jpg` 为项目截图
-- 替换 `assets/files/resume.pdf` 为你的简历 PDF
+- `assets/files/resume_zh.pdf`：中文完整简历
+- `assets/files/resume_en.pdf`：英文完整简历
 
 ### 3. 部署到 GitHub Pages
 
