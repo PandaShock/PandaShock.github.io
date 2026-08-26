@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品集 - 郁俊杰</title>
+    <title>项目 - 郁俊杰 | Projects - Junjie Yu</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -24,69 +24,92 @@
 
 <main class="container">
     <header class="page-header">
-        <h1 class="page-title">作品集</h1>
-        <p class="page-subtitle">项目案例 &middot; 技术实践</p>
+        <h1 class="page-title">项目</h1>
+        <p class="page-subtitle">Research &amp; Engineering</p>
     </header>
 
-    <div class="portfolio-grid">
-
-        <!-- 项目 1 -->
-        <div class="portfolio-card">
-            <img src="assets/img/project1.jpg" alt="超声声速校正" class="portfolio-card-img" onerror="this.src='https://placehold.co/600x360/2563eb/ffffff?text=Sound+Speed+Correction'">
-            <div class="portfolio-card-body">
-                <h3 class="portfolio-card-title">超声声速校正与断层层析</h3>
-                <p class="portfolio-card-desc">手持超声设备中的声速断层层析重建，求解组织中任意点的声速分布，通过优化飞行时间实现精准 B-mode 成像。</p>
-                <div class="portfolio-card-tags">
-                    <span>MATLAB</span>
-                    <span>k-wave</span>
-                    <span>最优化</span>
-                </div>
+    <article class="project">
+        <header class="project-header">
+            <h2 class="project-title">Sound of Speed Imaging and Correction</h2>
+            <p class="project-lead">
+                Imaging and correcting the speed of sound in tissue with a hand-held ultrasound
+                device. The local speed-of-sound distribution is reconstructed from echo data and
+                used to correct the time of flight, yielding sharp, correctly focused B-mode
+                images. Demonstrated on phantom and carotid scans, and validated end-to-end with
+                the k-wave and Field II simulation pipelines across different beamformers and
+                front-ends.
+            </p>
+            <div class="portfolio-card-tags">
+                <span>MATLAB</span>
+                <span>k-wave</span>
+                <span>Field II</span>
+                <span>Beamforming</span>
+                <span>Optimization</span>
             </div>
-        </div>
+        </header>
 
-        <!-- 项目 2 -->
-        <div class="portfolio-card">
-            <img src="assets/img/project2.jpg" alt="压缩感知CT重建" class="portfolio-card-img" onerror="this.src='https://placehold.co/600x360/059669/ffffff?text=Sparse+CT+Recovery'">
-            <div class="portfolio-card-body">
-                <h3 class="portfolio-card-title">压缩感知稀疏信号恢复</h3>
-                <p class="portfolio-card-desc">通过极少量采样的脑部 CT 图像，使用 Sorted L1/L2 正则化方法进行重建，发表于 Journal of Scientific Computing。</p>
-                <div class="portfolio-card-tags">
-                    <span>压缩感知</span>
-                    <span>最优化</span>
-                    <span>图像重建</span>
-                </div>
+        <section class="project-section">
+            <h3 class="project-subtitle">Phantom</h3>
+            <div class="project-figure-row">
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/phantom-bmode.png" alt="Phantom B-mode image">
+                    <figcaption>B-mode ultrasound image of a uniform phantom.</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/phantom-sos.png" alt="Phantom reconstructed speed of sound map">
+                    <figcaption>Reconstructed speed-of-sound map of the phantom (≈1534–1552 m/s).</figcaption>
+                </figure>
             </div>
-        </div>
+        </section>
 
-        <!-- 项目 3 -->
-        <div class="portfolio-card">
-            <img src="assets/img/project3.jpg" alt="PnP图像重建" class="portfolio-card-img" onerror="this.src='https://placehold.co/600x360/dc2626/ffffff?text=PnP+Reconstruction'">
-            <div class="portfolio-card-body">
-                <h3 class="portfolio-card-title">PnP 图像重建</h3>
-                <p class="portfolio-card-desc">将优化方法与深度学习先验相结合（PnP），提升图像重建质量与鲁棒性。</p>
-                <div class="portfolio-card-tags">
-                    <span>深度学习</span>
-                    <span>最优化</span>
-                    <span>Python</span>
-                </div>
+        <section class="project-section">
+            <h3 class="project-subtitle">Carotid</h3>
+            <div class="project-figure-row">
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/carotid-roi.png" alt="Carotid region of interest B-mode image">
+                    <figcaption>In-vivo carotid scan (region of interest).</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/carotid-sos.png" alt="Carotid reconstructed speed of sound map">
+                    <figcaption>Reconstructed speed-of-sound map of the carotid (≈1510–1570 m/s).</figcaption>
+                </figure>
             </div>
-        </div>
+        </section>
 
-        <!-- 项目 4 -->
-        <div class="portfolio-card">
-            <img src="assets/img/project4.jpg" alt="k-wave超声仿真" class="portfolio-card-img" onerror="this.src='https://placehold.co/600x360/7c3aed/ffffff?text=k-wave+Simulation'">
-            <div class="portfolio-card-body">
-                <h3 class="portfolio-card-title">k-wave 非均匀介质超声仿真</h3>
-                <p class="portfolio-card-desc">以 k-wave 对非均匀复杂介质进行仿真成像，覆盖平面波、虚拟源球面波、聚焦发射，并对运动心脏介质进行运动校正改善成像。</p>
-                <div class="portfolio-card-tags">
-                    <span>k-wave</span>
-                    <span>MATLAB</span>
-                    <span>Field II</span>
-                </div>
+        <blockquote class="project-quote">
+            Can this speed of sound be used to correct the time of flight? <strong>Of course!</strong>
+        </blockquote>
+
+        <section class="project-section">
+            <h3 class="project-subtitle">Different Beamformers and Front-Ends</h3>
+            <p class="project-note">Full imaging capability across different beamformers and front-ends.</p>
+            <div class="project-figure-row">
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/frontend-beamformer-1.png" alt="Curved-array beamformed image">
+                    <figcaption>Beamformed image with a curved-array front-end.</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/frontend-beamformer-2.png" alt="Point-target beamformed image">
+                    <figcaption>Point-target imaging with a different beamformer.</figcaption>
+                </figure>
             </div>
-        </div>
+        </section>
 
-    </div>
+        <section class="project-section">
+            <h3 class="project-subtitle">k-wave and Field II Simulation</h3>
+            <p class="project-note">Whole-process simulation pipeline with k-wave and Field II.</p>
+            <div class="project-figure-row">
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/simulation-beamformed.png" alt="Simulated beamformed data with point targets">
+                    <figcaption>Simulated beamformed data.</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="assets/img/sound-speed/simulation-field.png" alt="Field II sector simulation">
+                    <figcaption>Field II sector simulation.</figcaption>
+                </figure>
+            </div>
+        </section>
+    </article>
 </main>
 
 <footer class="footer">
