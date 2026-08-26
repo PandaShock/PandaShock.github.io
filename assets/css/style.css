@@ -88,6 +88,11 @@ a:hover {
     color: var(--primary);
 }
 
+.navbar-links a.nav-download {
+    color: var(--primary);
+    font-weight: 600;
+}
+
 /* Hamburger */
 .hamburger {
     display: none;
