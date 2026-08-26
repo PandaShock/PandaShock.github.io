@@ -18,8 +18,7 @@
             <li><a href="index.html">首页</a></li>
             <li><a href="resume.html" class="active">简历</a></li>
             <li><a href="portfolio.html">项目</a></li>
-            <li><a href="assets/files/resume_zh.pdf" class="nav-download" target="_blank">下载简历</a></li>
-            <li><a href="mailto:errolljunjie@gmail.com">联系</a></li>
+            <li><a href="contact.html">联系</a></li>
         </ul>
     </div>
 </nav>
@@ -30,9 +29,14 @@
         <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
     </div>
 
+    <div class="download-box">
+        <p id="download-desc">下载完整版中文简历 PDF</p>
+        <a id="download-resume" href="assets/files/resume_zh.pdf" class="btn btn-primary" target="_blank">下载简历</a>
+    </div>
+
     <header class="page-header">
         <h1 class="page-title">简历</h1>
-        <p class="page-subtitle">深圳 &middot; +86 15021875291 &middot; errolljunjie@gmail.com</p>
+        <p id="contact-line" class="page-subtitle">深圳 &middot; +86 15021875291 &middot; 1418012911@qq.com &middot; errolljunjie@gmail.com</p>
     </header>
 
     <!-- ================= 中文 ================= -->
@@ -51,6 +55,15 @@
                 <div class="timeline-org">深圳华声医疗技术股份有限公司</div>
                 <div class="timeline-desc">
                     <p>负责超声前处理（从发射到 B-mode 成像），从回波信号端入手改善成像质量与帧率，通过数学与物理算法结合深度学习解决聚焦成像、平面波成像中的困难问题。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 项目内容 -->
+        <h2 class="section-title">项目内容</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-desc">
                     <ul style="margin-top:8px; padding-left:16px;">
                         <li><strong>声速重建（各向异性）：</strong>重建线阵下组织每一点的声速（实时），用重建声速优化 B-mode 飞行时间，改善分辨率与聚焦，实现一次聚焦发射全场成像</li>
                         <li><strong>聚焦发射相位校正：</strong>推导与实现菲涅尔衍射积分的近似解析解，将相位校正与 DSTC 应用于真机相控阵（主要是心脏）、线阵的 B-mode 聚焦发射优化，提升分辨率与帧率</li>
@@ -135,12 +148,6 @@
                 <div class="timeline-desc">持续紧跟前沿，转化其中的可靠成果；思维活跃；崇尚团队间开明、自由、讨论与协作的氛围；擅长项目的按时、长远规划。</div>
             </div>
         </div>
-
-        <!-- PDF 下载 -->
-        <div class="download-box">
-            <p>下载完整版中文简历 PDF</p>
-            <a href="assets/files/resume_zh.pdf" class="btn btn-primary" target="_blank">下载 PDF</a>
-        </div>
     </div>
 
     <!-- ================= English ================= -->
@@ -159,6 +166,15 @@
                 <div class="timeline-org">Shenzhen Wisonic Medical Technology Co., Ltd.</div>
                 <div class="timeline-desc">
                     <p>Owned the ultrasound front-end (from transmit to B-mode imaging), improving image quality and frame rate from the echo-signal side, combining mathematical/physical algorithms with deep learning to solve difficult problems in focused and plane-wave imaging.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <h2 class="section-title">Projects</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-desc">
                     <ul style="margin-top:8px; padding-left:16px;">
                         <li><strong>Anisotropic sound-speed reconstruction:</strong> real-time per-point tissue sound speed for linear-array imaging; used to optimize B-mode time-of-flight, improving resolution and focusing and enabling single-focus full-field imaging</li>
                         <li><strong>Focused-transmit phase correction:</strong> derived and implemented an approximate analytic solution to the Fresnel diffraction integral; applied phase correction with DSTC to real phased-array (mainly cardiac) and linear-array B-mode, improving resolution and frame rate</li>
@@ -242,12 +258,6 @@
                 <div class="timeline-desc">Continuously tracks state-of-the-art advances and translates proven results into practice; active and creative thinker; values an open, free, and collaborative team culture built on candid discussion; skilled in on-time delivery and long-term project planning.</div>
             </div>
         </div>
-
-        <!-- PDF Download -->
-        <div class="download-box">
-            <p>Download the full English resume PDF</p>
-            <a href="assets/files/resume_en.pdf" class="btn btn-primary" target="_blank">Download PDF</a>
-        </div>
     </div>
 
     <script>
@@ -259,6 +269,21 @@
                 b.classList.toggle('active', b.dataset.lang === l);
             });
             document.querySelector('.page-title').textContent = (l === 'zh') ? '简历' : 'Resume';
+            var contact = document.getElementById('contact-line');
+            if (contact) {
+                contact.innerHTML = (l === 'zh')
+                    ? '深圳 &middot; +86 15021875291 &middot; 1418012911@qq.com &middot; errolljunjie@gmail.com'
+                    : 'Shenzhen &middot; +86 15021875291 &middot; errolljunjie@gmail.com &middot; 1418012911@qq.com';
+            }
+            var dl = document.getElementById('download-resume');
+            var dlt = document.getElementById('download-desc');
+            if (dl) {
+                dl.href = (l === 'zh') ? 'assets/files/resume_zh.pdf' : 'assets/files/resume_en.pdf';
+                dl.textContent = (l === 'zh') ? '下载简历' : 'Download Resume';
+            }
+            if (dlt) {
+                dlt.textContent = (l === 'zh') ? '下载完整版中文简历 PDF' : 'Download the full English resume PDF';
+            }
         }
     </script>
 </main>
