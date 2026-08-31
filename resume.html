@@ -62,11 +62,13 @@
             <div class="timeline-item">
                 <div class="timeline-desc">
                     <ul style="margin-top:8px; padding-left:16px;">
-                        <li><strong>声速重建（各向异性）：</strong>重建线阵下组织每一点的声速（实时），用重建声速优化 B-mode 飞行时间，改善分辨率与聚焦，实现一次聚焦发射全场成像</li>
-                        <li><strong>聚焦发射相位校正：</strong>推导与实现菲涅尔衍射积分的近似解析解，将相位校正与 DSTC 应用于真机相控阵（主要是心脏）、线阵的 B-mode 聚焦发射优化，提升分辨率与帧率</li>
+                        <li><strong>声速重建（各向异性）：</strong>凸优化逆问题求解线阵下组织每一点的声速（实时）；用波动方程约束的物理信息神经网络（PINN）从原始射频数据直接反演全场连续声速；用 eikonal 方程求准确飞行时间，改善分辨率、减少伪影</li>
+                        <li><strong>聚焦发射全场成像：</strong>聚焦发射相位校正；推导并实现菲涅尔衍射积分的近似解析解；一次聚焦发射实现全场成像</li>
+                        <li><strong>全通道合成孔径反演：</strong>将聚焦发射反演回单通道信号，配合声速重建优化聚焦发射分辨率</li>
+                        <li><strong>多重反射抑制：</strong>多种方法抑制血管杂波、近场杂波并系统性减弱多重反射</li>
                         <li><strong>PW 模式自动优化：</strong>一键自动调优频谱增益、速度标尺与基线</li>
-                        <li><strong>系统级前端：</strong>搭建前端发射、接收全链路算法；针对虚拟源波束合成、多波束波束合成改进非焦区</li>
-                        <li><strong>调图优化：</strong>负责颅脑 B 图、颈脑一体化图像优化（市场上最佳之一的颅脑 B 图）</li>
+                        <li><strong>优化图像：</strong>负责颅脑 B 图、颈脑一体化图像优化（市场上最佳之一的颅脑 B 图）</li>
+                        <li><strong>系统级前端：</strong>搭建前端发射、接收全链路算法；针对虚拟源、多波束波束合成改进非焦区，提高帧率</li>
                         <li><strong>开发平台：</strong>非均匀介质开发平台、通用数据交换平台</li>
                     </ul>
                 </div>
@@ -136,13 +138,13 @@
             <span class="skill-tag">逆问题</span>
             <span class="skill-tag">CET-6</span>
         </div>
-        <p class="page-subtitle" style="margin-top:12px;">精通 k-wave、Field II，具有完整、准确的波仿真和 B-mode、C、PW 成像能力；日常跟进超声、地震成像文献进展。</p>
+        <p class="page-subtitle" style="margin-top:12px;">精通 k-wave、Field II，具有完整、准确的波仿真和 B-mode、C、PW 成像能力；日常跟进超声成像文献进展。</p>
 
         <!-- 个人简介 -->
         <h2 class="section-title">个人简介</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-desc">持续紧跟前沿，转化其中的可靠成果；思维活跃；崇尚团队间开明、自由、讨论与协作的氛围；擅长项目的按时、长远规划。</div>
+                <div class="timeline-desc">目标是做出行业突破性的成果；持续关注学术前沿；思维活跃；崇尚团队中开明、自由、讨论与协作的氛围；擅长项目的风险控制与长远规划。</div>
             </div>
         </div>
     </div>
@@ -173,12 +175,14 @@
             <div class="timeline-item">
                 <div class="timeline-desc">
                     <ul style="margin-top:8px; padding-left:16px;">
-                        <li><strong>Anisotropic sound-speed reconstruction:</strong> real-time per-point tissue sound speed for linear-array imaging; used to optimize B-mode time-of-flight, improving resolution and focusing and enabling single-focus full-field imaging</li>
-                        <li><strong>Focused-transmit phase correction:</strong> derived and implemented an approximate analytic solution to the Fresnel diffraction integral; applied phase correction with DSTC to real phased-array (mainly cardiac) and linear-array B-mode, improving resolution and frame rate</li>
+                        <li><strong>Anisotropic sound-speed reconstruction:</strong> inverse-problem convex optimization for real-time per-point tissue sound speed; a wave-equation-constrained PINN inverting the continuous full-field speed from raw RF data; and eikonal-based time-of-flight to improve resolution and reduce artifacts</li>
+                        <li><strong>Single-focus transmit imaging:</strong> phase correction for focused transmit; derived an approximate analytic solution to the Fresnel diffraction integral; achieved whole-field imaging from a single focused transmit</li>
+                        <li><strong>Full-channel synthetic aperture inversion:</strong> reconstructed single-channel signals from a focused transmit; combined with sound-speed inversion to optimize focused-transmit resolution</li>
+                        <li><strong>Multiple-reflection suppression:</strong> suppressed vessel and near-field clutter and reduced multiple reflections</li>
                         <li><strong>PW mode auto-optimization:</strong> one-click auto-tuning of spectral gain, velocity scale, and baseline</li>
-                        <li><strong>System-level front-end:</strong> built the full transmit/receive algorithm chain; improved virtual-source and multi-beam beamforming for out-of-focus regions</li>
-                        <li><strong>Image tuning:</strong> optimized transcranial B-mode and carotid-brain integrated imaging (one of the best transcranial B-mode images on the market)</li>
-                        <li><strong>Development platforms:</strong> non-uniform medium platform; general-purpose data-exchange platform</li>
+                        <li><strong>Development platforms:</strong> non-uniform-medium simulation platform; general-purpose data-exchange platform</li>
+                        <li><strong>System-level front-end:</strong> built the full transmit/receive algorithm chain; improved virtual-source and multi-beam beamforming for off-focus regions</li>
+                        <li><strong>Image tuning:</strong> optimized transcranial B-mode and carotid-brain integrated imaging (best-in-class transcranial B-mode)</li>
                     </ul>
                 </div>
             </div>
@@ -246,13 +250,13 @@
             <span class="skill-tag">Inverse Problems</span>
             <span class="skill-tag">CET-6</span>
         </div>
-        <p class="page-subtitle" style="margin-top:12px;">Proficient in k-Wave and Field II with full, accurate wave-simulation and B-mode / C-mode / PW imaging capability; regularly tracks frontier literature in ultrasound and seismic imaging.</p>
+        <p class="page-subtitle" style="margin-top:12px;">Proficient in k-Wave and Field II with full, accurate wave-simulation and B-mode / C-mode / PW imaging capability; regularly tracks frontier literature in ultrasound imaging.</p>
 
         <!-- Professional Summary -->
         <h2 class="section-title">Professional Summary</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-desc">Continuously tracks state-of-the-art advances and translates proven results into practice; active and creative thinker; values an open, free, and collaborative team culture built on candid discussion; skilled in on-time delivery and long-term project planning.</div>
+                <div class="timeline-desc">A long-term goal to produce groundbreaking results; continuously follow academic frontier research; active and creative thinker; values an open, free, and collaborative team culture built on candid discussion; skilled in project risk control and long-term planning.</div>
             </div>
         </div>
     </div>
